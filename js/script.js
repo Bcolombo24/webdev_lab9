@@ -1,25 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
+    var input = document.createElement("input");
+    var button = document.createElement("button");
+    var output = document.createElement("h2");
 
-    const input = document.getElementById("entryinput");
-    const button = document.getElementById("entrybutton");
-    const output = document.getElementById("textoutput");
+    input.placeholder = "Type Something...";
+    button.textContent = "Submit";
+    output.textContent = "Your text will appear here";
 
-    button.addEventListener("click", function() {
-        const userText = input.value.trim();
-        if (userText === "") {
-          alert("Please type something first!");
-          return;
+    document.body.appendChild(input);
+    document.body.appendChild(button);
+    document.body.appendChild(output);
+
+    button.onclick = function() {
+        var text = input.value;
+        if (text === "") {
+            alert("Please type something first!");
+            return;
         }
-
-        alert("Brandon Colombo: " + userText);
-
-        output.textContent = userText;
-
-        input.value = "";
-    });
-
-
-
+    
+    alert("Brandon Colombo: " + text);
+    output.textContent = text;
+    input.value = "";
+    };
 });
 
 
