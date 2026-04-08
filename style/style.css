@@ -9,6 +9,7 @@
   width: 100%;
 }
 #entrybutton {
+  cursor: pointer;
   width: 200px;
   text-align: center;
   color: #fff;
