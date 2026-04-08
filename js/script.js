@@ -5,15 +5,18 @@ function start() {
         var input = document.getElementById("entryinput");
         var output = document.getElementById("textoutput");
         
-        if (input.value === "") {
+        if (input.value.trim() === "") {
             alert("Please type something first!");
             return;
         }
+
         alert("Brandon Colombo: " + input.value);
         output.innerHTML = input.value;
     }
-
-    button.addEventListener("click", showText);
+    if (button) {
+        button.style.cursor = "pointer";
+        button.addEventListener("click", showText);
+    }
 }
 window.addEventListener("load", start);
 
